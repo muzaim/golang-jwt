@@ -1,0 +1,26 @@
+# air.toml
+
+# [1] App config
+root = "."
+tmp_dir = "tmp"
+
+# [2] Watch config
+[watcher]
+  # Include these files/extensions
+  extensions = ["go", "tpl", "tmpl", "html"]
+
+# [3] Build config
+[build]
+  cmd = "go build -o tmp/main ."
+  bin = "tmp/main"
+  full_bin = "tmp/main"
+  delay = 1000             # wait for 1 second after last change
+  exclude_dir = ["tmp", "vendor"]
+
+# [4] Log config
+[log]
+  time = true
+
+# [5] Run config
+[run]
+  cmd = ""
